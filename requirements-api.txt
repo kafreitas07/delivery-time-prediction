@@ -1,0 +1,10 @@
+# Dependências da imagem Docker da API.
+# Versões fixas iguais às do treino, para o model.pkl carregar sem incompatibilidade.
+pandas==3.1.1
+numpy==2.5.4
+scikit-learn==1.9.1
+xgboost==3.4.1
+joblib==1.6.0
+fastapi==0.162.5
+pydantic==2.14.3
+uvicorn==0.54.0

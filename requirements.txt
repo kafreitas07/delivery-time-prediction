@@ -7,3 +7,5 @@ xgboost
 jupyter
 fastapi
 uvicorn
+pytest
+httpx
