@@ -1,0 +1,12 @@
+# Dados e modelos
+data/
+models/*.pkl
+
+# Ambiente virtual
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
