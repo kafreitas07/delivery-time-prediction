@@ -9,7 +9,7 @@ Modelo de machine learning que prevê, **no momento em que o pedido é feito**, 
 
 Quando um cliente faz um pedido, a plataforma precisa mostrar uma estimativa de entrega. Uma estimativa ruim gera frustração (atrasa) ou perde vendas (exagera). O objetivo é prever `Time_taken(min)` usando **só informações disponíveis no momento do pedido**: localização do restaurante e do cliente, perfil do entregador, clima, trânsito, veículo, tipo de pedido, data e hora.
 
-Os dados são ~45 mil entregas de comida em cidades da Índia (`data/raw/train.csv`).
+Os dados são ~45 mil entregas de comida em cidades da Índia, do dataset [Food Delivery Dataset](https://www.kaggle.com/datasets/gauravmalik26/food-delivery-dataset) do Kaggle (arquivo `train.csv`).
 
 ## Arquitetura
 
@@ -80,7 +80,9 @@ Variáveis mais importantes no XGBoost: trânsito (*Low* e *Jam*), clima (*Sunny
 
 ## Como rodar
 
-Pré-requisitos: Python 3.13 e Docker. Coloque o arquivo de dados em `data/raw/train.csv` (a pasta `data/` não é versionada).
+Pré-requisitos: Python 3.13 e Docker.
+
+O modelo treinado já está versionado em `models/model.pkl`, então os passos 4 a 6 (testes, Docker e previsão) funcionam direto do clone. Para refazer a limpeza e o treino (passos 2 e 3), baixe o `train.csv` do [Kaggle](https://www.kaggle.com/datasets/gauravmalik26/food-delivery-dataset) e coloque em `data/raw/train.csv` (a pasta `data/` não é versionada).
 
 **1. Ambiente virtual**
 
@@ -174,7 +176,7 @@ Invoke-RestMethod -Method Post -Uri http://localhost:8000/predict -ContentType "
 ├── notebooks/01_eda.ipynb   # análise exploratória
 ├── tests/test_api.py        # testes da API
 ├── docs/images/             # gráficos do README
-├── models/                  # model.pkl (não versionado)
+├── models/model.pkl         # pipeline final (XGBoost), versionado
 ├── data/                    # raw/ e processed/ (não versionado)
 ├── Dockerfile
 ├── requirements.txt         # ambiente de desenvolvimento

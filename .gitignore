@@ -1,6 +1,8 @@
 # Dados e modelos
 data/
 models/*.pkl
+# Modelo final versionado: testes e Docker funcionam direto do clone
+!models/model.pkl
 
 # Ambiente virtual
 venv/
